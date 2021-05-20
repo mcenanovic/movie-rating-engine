@@ -1,0 +1,17 @@
+<div class="movie-list">
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input type="text" (input)="onSearchChange()" [(ngModel)]="searchInput" autocomplete="off" matInput>
+  </mat-form-field>
+
+  <mat-button-toggle-group [value]="category" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="movie">Movies</mat-button-toggle>
+    <mat-button-toggle value="tvShow">TV Shows</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <section>
+    <app-movie-card *ngFor="let card of [].constructor(10)"></app-movie-card>
+  </section>
+
+  <button mat-flat-button color="primary">View more results</button>
+</div>

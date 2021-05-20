@@ -1,0 +1,55 @@
+.movie-card {
+  display: flex;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  margin: 3px 0;
+
+  img {
+    width: 20%;
+  }
+
+  section {
+    width: 80%;
+    margin-left: 10px;
+
+    h2 {
+      text-align: center;
+    }
+
+    .description {
+      font-style: italic;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 10px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  color: #d3d3d3;
+}
+
+.full {
+  color: yellow;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: yellow;
+}

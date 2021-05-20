@@ -1,0 +1,21 @@
+<div class="movie-card">
+  <img src="assets\movie.png" alt="Movie Image">
+  <section>
+    <h2>{{ title }}</h2>
+    <p class="description">{{ description }}</p>
+    <p>Release Date: <b>{{ releaseDate }}</b></p>
+    <p>Cast: <b *ngFor="let cast of casts; last as isLast">{{ cast }}<span *ngIf="!isLast">, </span></b></p>
+
+    <div class="rating">
+      <ng-template #t let-fill="fill">
+        <span class="star" [class.full]="fill === 100">
+          <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+        </span>
+      </ng-template>
+
+      <ngb-rating [(rate)]="rating" [starTemplate]="t" [readonly]="false" [max]="5"></ngb-rating>
+      <p>{{ rating }}/5</p>
+    </div>
+  </section>
+
+</div>

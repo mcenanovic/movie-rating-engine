@@ -1,0 +1,29 @@
+.movie-list {
+  background-color: azure;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px 40px;
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-button-toggle-group {
+    width: 100%;
+    border: none;
+  }
+
+  section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mat-flat-button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
