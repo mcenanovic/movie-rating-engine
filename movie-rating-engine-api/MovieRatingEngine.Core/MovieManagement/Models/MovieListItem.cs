@@ -5,8 +5,6 @@ namespace MyPro.Core.UserManagement.Models
 {
     public class MovieListItem
     {
-        public int MovieID { get; set; }
-
         public string Title { get; set; }
 
         public string ImageURL { get; set; }
@@ -15,10 +13,8 @@ namespace MyPro.Core.UserManagement.Models
 
         public DateTime ReleaseDate { get; set; }
 
-        public int VoteCount { get; set; }
-
         public decimal Rating { get; set; }
 
-        public List<MovieActor> Actors { get; set; }
+        public List<string> Actors { get; set; }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyPro.Core.UserManagement.Models;
+using MyPro.Core.UserManagement.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,18 @@ namespace MovieRatingEngine.Api.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
+        private IMovieRepository movieRepository;
+
+        public MoviesController(IMovieRepository movieRepository)
+        {
+            this.movieRepository = movieRepository;
+        }
+
         // GET: api/<MoviesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<List<MovieListItem>> Get([FromQuery] string searchString)
         {
-            return new string[] { "value1", "value2" };
+            return await movieRepository.GetMoviesAsync();
         }
 
         // GET api/<MoviesController>/5
