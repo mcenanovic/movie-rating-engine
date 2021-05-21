@@ -1,9 +1,8 @@
 .movie-list {
-  background-color: azure;
+  background-color: bisque;
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: auto;
   padding: 20px 40px;
@@ -25,5 +24,17 @@
   .mat-flat-button {
     width: 100%;
     margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .movie-list {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .movie-list {
+    padding: 20px 5px;
   }
 }

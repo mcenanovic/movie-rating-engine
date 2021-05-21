@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace MyPro.Infrastructure.Ef.Entities
+namespace MovieRatingEngine.Infrastructure.Ef.Entities
 {
     internal class Movie
     {
         public int MovieID { get; set; }
 
         public string Title { get; set; }
-
-        public string ImageURL { get; set; }
 
         public string Description { get; set; }
 
@@ -20,6 +18,10 @@ namespace MyPro.Infrastructure.Ef.Entities
 
         public decimal Rating { get; set; }
 
+        public bool IsMovie { get; set; }
+
         public List<MovieActor> Actors { get; set; }
+
+        public string ImageName { get; set; }
     }
 }

@@ -1,17 +1,22 @@
 <div class="movie-list">
   <mat-form-field appearance="outline">
     <mat-label>Search</mat-label>
-    <input type="text" (input)="onSearchChange()" [(ngModel)]="searchInput" autocomplete="off" matInput>
+    <input type="text" [ngModel]="query.search" (ngModelChange)="onSearchChanged($event)" autocomplete="off" matInput>
   </mat-form-field>
 
-  <mat-button-toggle-group [value]="category" name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle value="movie">Movies</mat-button-toggle>
-    <mat-button-toggle value="tvShow">TV Shows</mat-button-toggle>
+  <mat-button-toggle-group (change)="onCategoryChange()" [(ngModel)]="query.isMovie">
+    <mat-button-toggle [value]="true">Movies</mat-button-toggle>
+    <mat-button-toggle [value]="false">TV Shows</mat-button-toggle>
   </mat-button-toggle-group>
 
-  <section>
-    <app-movie-card *ngFor="let card of [].constructor(10)"></app-movie-card>
+  <div *ngIf="movieService.isLoading$ | async">
+    <mat-spinner color="accent"></mat-spinner>
+  </div>
+  <section >
+    <div *ngFor="let movie of movies">
+      <app-movie-card [movie]="movie" [query]="query"></app-movie-card>
+    </div>
   </section>
 
-  <button mat-flat-button color="primary">View more results</button>
+  <button *ngIf="movies.length === query.count" mat-flat-button color="primary" (click)="onViewMoreResults()">View more results</button>
 </div>

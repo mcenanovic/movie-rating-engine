@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieRatingEngine.Infrastructure.Ef.Entities;
 using MovieRatingEngine.Infrastructure.Ef.EntityTypeConfigurations;
-using MyPro.Infrastructure.Ef.Entities;
-using MyPro.Infrastructure.Ef.EntityTypeConfigurations;
+using MovieRatingEngine.Infrastructure.Ef.Entities;
+using MovieRatingEngine.Infrastructure.Ef.EntityTypeConfigurations;
 
 namespace MovieRatingEngine.Infrastructure.Ef
 {

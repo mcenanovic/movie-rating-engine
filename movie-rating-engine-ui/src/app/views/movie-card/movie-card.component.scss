@@ -6,6 +6,7 @@
 
   img {
     width: 20%;
+    border-radius: 10px;
   }
 
   section {
@@ -32,24 +33,14 @@
         margin: 10px;
         font-size: 1.2rem;
       }
+
+      .rate-button {
+        border: 0;
+        cursor: pointer;
+        color: blue;
+        background-color: transparent;
+      }
     }
   }
 }
 
-.star {
-  position: relative;
-  display: inline-block;
-  font-size: 2rem;
-  color: #d3d3d3;
-}
-
-.full {
-  color: yellow;
-}
-
-.half {
-  position: absolute;
-  display: inline-block;
-  overflow: hidden;
-  color: yellow;
-}

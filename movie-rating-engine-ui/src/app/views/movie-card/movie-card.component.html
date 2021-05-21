@@ -1,10 +1,10 @@
 <div class="movie-card">
-  <img src="assets\movie.png" alt="Movie Image">
+  <img [src]="imageSrc" alt="Movie Image">
   <section>
-    <h2>{{ title }}</h2>
-    <p class="description">{{ description }}</p>
-    <p>Release Date: <b>{{ releaseDate }}</b></p>
-    <p>Cast: <b *ngFor="let cast of casts; last as isLast">{{ cast }}<span *ngIf="!isLast">, </span></b></p>
+    <h2>{{ movie.title }}</h2>
+    <p class="description">{{ movie.description }}</p>
+    <p>Release Date: <b>{{ movie.releaseDate | date: 'mediumDate' }}</b></p>
+    <p>Cast: <b *ngFor="let cast of movie.actors; last as isLast">{{ cast }}<span *ngIf="!isLast">, </span></b></p>
 
     <div class="rating">
       <ng-template #t let-fill="fill">
@@ -13,8 +13,9 @@
         </span>
       </ng-template>
 
-      <ngb-rating [(rate)]="rating" [starTemplate]="t" [readonly]="false" [max]="5"></ngb-rating>
-      <p>{{ rating }}/5</p>
+      <ngb-rating [(rate)]="movie.rating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+      <p>{{ movie.rating }}/5</p>
+      <button *ngIf="!isRatedAlready" class="rate-button" (click)="onRate()">Rate</button>
     </div>
   </section>
 

@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using MovieRatingEngine.Infrastructure.Ef;
-using MyPro.Core.UserManagement.Repositories;
-using MyPro.Infrastructure.Ef.Repositories.UserManagement;
+using MovieRatingEngine.Core.MovieManagement.Repositories;
+using MovieRatingEngine.Infrastructure.Ef.Repositories.MovieManagement;
 
-namespace MyPro.Infrastructure.Ef.Extensions.DependencyInjection
+namespace MovieRatingEngine.Infrastructure.Ef.Extensions.DependencyInjection
 {
     public static class DependencyInjectionExtensions
     {

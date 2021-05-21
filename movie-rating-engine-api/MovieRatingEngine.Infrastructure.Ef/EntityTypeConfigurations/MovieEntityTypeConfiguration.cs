@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MyPro.Infrastructure.Ef.Entities;
-using MyPro.Infrastructure.Ef.SeedData;
+using MovieRatingEngine.Infrastructure.Ef.Entities;
+using MovieRatingEngine.Infrastructure.Ef.SeedData;
 
-namespace MyPro.Infrastructure.Ef.EntityTypeConfigurations
+namespace MovieRatingEngine.Infrastructure.Ef.EntityTypeConfigurations
 {
     internal class MovieEntityTypeConfiguration : IEntityTypeConfiguration<Movie>
     {
@@ -19,9 +19,6 @@ namespace MyPro.Infrastructure.Ef.EntityTypeConfigurations
                 .HasMaxLength(50);
 
             builder
-                .Property(x => x.ImageURL);
-
-            builder
                 .Property(x => x.Description)
                 .IsRequired()
                 .HasMaxLength(300);
@@ -34,11 +31,19 @@ namespace MyPro.Infrastructure.Ef.EntityTypeConfigurations
             builder
                 .Property(x => x.Rating)
                 .IsRequired()
-                .HasDefaultValue(0m);
+                .HasDefaultValue(0m)
+                .HasPrecision(3,2);
 
             builder
                 .Property(x => x.ReleaseDate)
                 .IsRequired();
+
+            builder
+                .Property(x => x.IsMovie)
+                .IsRequired();
+
+            builder
+                .Property(x => x.ImageName);
 
             builder.SeedData();
         }

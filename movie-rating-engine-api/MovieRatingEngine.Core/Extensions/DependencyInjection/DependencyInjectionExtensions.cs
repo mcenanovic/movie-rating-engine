@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using MyPro.Core.UserManagement.Entities;
-using MyPro.Core.UserManagement.Validators;
+using MovieRatingEngine.Core.MovieManagement.Entities;
+using MovieRatingEngine.Core.MovieManagement.Validators;
 
-namespace MyPro.Core.Extensions.DependencyInjection
+namespace MovieRatingEngine.Core.Extensions.DependencyInjection
 {
     public static class DependencyInjectionExtensions
     {

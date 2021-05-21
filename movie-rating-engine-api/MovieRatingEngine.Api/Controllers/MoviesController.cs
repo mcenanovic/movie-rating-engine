@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyPro.Core.UserManagement.Models;
-using MyPro.Core.UserManagement.Repositories;
-using System;
+using MovieRatingEngine.Core.MovieManagement.Models;
+using MovieRatingEngine.Core.MovieManagement.Repositories;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MovieRatingEngine.Api.Controllers
 {
@@ -21,36 +17,48 @@ namespace MovieRatingEngine.Api.Controllers
             this.movieRepository = movieRepository;
         }
 
-        // GET: api/<MoviesController>
         [HttpGet]
-        public async Task<List<MovieListItem>> Get([FromQuery] string searchString)
+        public async Task<List<MovieListItem>> Get([FromQuery] GetMoviesQuery query)
         {
-            return await movieRepository.GetMoviesAsync();
+            return await movieRepository.GetMoviesAsync(query.IsMovie, query.Search, query.Count);
         }
 
-        // GET api/<MoviesController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<MoviesController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<MoviesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] int rating)
         {
+            if (id == null || !(await movieRepository.MovieExistsAsync(id)))
+            {
+                return NotFound();
+            }
+
+            await movieRepository.UpdateMovieAsync(id, rating);
+
+            return Ok();
         }
 
-        // DELETE api/<MoviesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
         }
+    }
+
+    public class GetMoviesQuery
+    {
+        public bool IsMovie { get; set; }
+
+        public string Search { get; set; }
+
+        public int Count { get; set; }
     }
 }

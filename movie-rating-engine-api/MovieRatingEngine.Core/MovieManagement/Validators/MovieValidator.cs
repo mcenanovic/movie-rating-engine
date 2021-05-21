@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using MyPro.Core.UserManagement.Entities;
+using MovieRatingEngine.Core.MovieManagement.Entities;
 
-namespace MyPro.Core.UserManagement.Validators
+namespace MovieRatingEngine.Core.MovieManagement.Validators
 {
     public class MovieValidator: AbstractValidator<Movie>
     {

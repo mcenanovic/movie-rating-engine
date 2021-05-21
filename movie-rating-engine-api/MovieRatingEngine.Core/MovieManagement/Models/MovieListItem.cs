@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MyPro.Core.UserManagement.Models
+namespace MovieRatingEngine.Core.MovieManagement.Models
 {
     public class MovieListItem
     {
-        public string Title { get; set; }
+        public int MovieID { get; set; }
 
-        public string ImageURL { get; set; }
+        public string Title { get; set; }
 
         public string Description { get; set; }
 
@@ -16,5 +16,7 @@ namespace MyPro.Core.UserManagement.Models
         public decimal Rating { get; set; }
 
         public List<string> Actors { get; set; }
+
+        public string ImageName { get; set; }
     }
 }

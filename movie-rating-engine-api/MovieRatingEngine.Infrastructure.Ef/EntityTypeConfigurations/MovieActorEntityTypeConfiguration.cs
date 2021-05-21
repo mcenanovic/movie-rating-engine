@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MovieRatingEngine.Infrastructure.Ef.Entities;
+using MovieRatingEngine.Infrastructure.Ef.SeedData;
 
 namespace MovieRatingEngine.Infrastructure.Ef.EntityTypeConfigurations
 {
@@ -21,6 +22,8 @@ namespace MovieRatingEngine.Infrastructure.Ef.EntityTypeConfigurations
                 .HasOne(x => x.Actor)
                 .WithMany(x => x.Movies)
                 .HasForeignKey(x => x.ActorID);
+
+            builder.SeedData();
         }
     }
 }

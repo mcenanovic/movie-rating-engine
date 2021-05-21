@@ -10,12 +10,14 @@ import { MovieCardComponent } from 'src/app/views/movie-card/movie-card.componen
 import { MovieListComponent } from 'src/app/views/movie-list/movie-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RateMovieDialogComponent } from 'src/app/views/rate-movie-dialog/rate-movie-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieCardComponent,
-    MovieListComponent
+    MovieListComponent,
+    RateMovieDialogComponent
   ],
   imports: [
     BrowserModule,

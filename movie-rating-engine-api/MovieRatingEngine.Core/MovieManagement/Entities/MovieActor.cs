@@ -1,4 +1,4 @@
-﻿using MyPro.Core.UserManagement.Entities;
+﻿using MovieRatingEngine.Core.MovieManagement.Entities;
 
 namespace MovieRatingEngine.Core.MovieManagement.Entities
 {

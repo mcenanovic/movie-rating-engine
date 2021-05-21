@@ -25,6 +25,36 @@ namespace MovieRatingEngine.Infrastructure.Ef.SeedData
                     ActorID = 3,
                     FirstName = "Dino",
                     LastName = "Merlin"
+                },
+                new Actor
+                {
+                    ActorID = 4,
+                    FirstName = "Denzel",
+                    LastName = "Washington"
+                },
+                new Actor
+                {
+                    ActorID = 5,
+                    FirstName = "Jason",
+                    LastName = "Statham"
+                },
+                new Actor
+                {
+                    ActorID = 6,
+                    FirstName = "Tom",
+                    LastName = "Cruz"
+                },
+                new Actor
+                {
+                    ActorID = 7,
+                    FirstName = "David",
+                    LastName = "Suchet"
+                },
+                new Actor
+                {
+                    ActorID = 8,
+                    FirstName = "Tom",
+                    LastName = "Hanks"
                 }
             );
         }

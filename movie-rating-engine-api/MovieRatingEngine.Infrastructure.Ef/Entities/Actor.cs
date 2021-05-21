@@ -1,4 +1,4 @@
-﻿using MyPro.Infrastructure.Ef.Entities;
+﻿using MovieRatingEngine.Infrastructure.Ef.Entities;
 using System.Collections.Generic;
 
 namespace MovieRatingEngine.Infrastructure.Ef.Entities

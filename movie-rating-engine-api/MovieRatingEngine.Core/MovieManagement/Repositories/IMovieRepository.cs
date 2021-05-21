@@ -1,12 +1,15 @@
-﻿using MyPro.Core.UserManagement.Models;
+﻿using MovieRatingEngine.Core.MovieManagement.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MyPro.Core.UserManagement.Repositories
+namespace MovieRatingEngine.Core.MovieManagement.Repositories
 {
-	//Test
     public interface IMovieRepository
     {
-        Task<List<MovieListItem>> GetMoviesAsync();
+        Task<List<MovieListItem>> GetMoviesAsync(bool isMovie, string search, int count);
+
+        Task UpdateMovieAsync(int id, int rating);
+
+        Task<bool> MovieExistsAsync(int id);
     }
 }
